@@ -8,3 +8,7 @@ resource "aws_instance" "web" {
     Name = "terraform-ec2"
   }
 }
+
+output "aws_instance_id" {
+  value = aws_instance.web.id
+}
