@@ -8,13 +8,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
-
 module "vpc" {
   source = "./modules/vpc"
 }
 
 module "ec2" {
-  source = "./modules/ec2"
+  source         = "./modules/ec2"
+  instance_type  = var.instance_type
 }
